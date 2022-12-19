@@ -1,9 +1,3 @@
-=begin
-This project involves building OOP University online library. The app allows you to:
-Add new students or teachers.
-Add new books.
-Save records of who borrowed a given book and when.
-=end
 ## 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -41,7 +35,7 @@ Save records of who borrowed a given book and when.
 </details>
 
 ### Key Features <a name="key-features"></a>
-
+**You can do the following with app:**
 - Add new students or teachers.
 - Add new books.
 - Save records of who borrowed a given book and when.
