@@ -9,7 +9,7 @@ class Person
   attr_reader :id
 
   # constructor method
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', parent_permission = 'true')
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -25,11 +25,7 @@ class Person
   # ublic method can_use_services?
   # that returns true if person is of age or if they have permission from parents.
   def can_use_services?
-    if of_age? || @parent_permission
-      true
-    else
-      false
-    end
+    of_age? || @parent_permission == 'true'
   end
 
   # make of_age method private

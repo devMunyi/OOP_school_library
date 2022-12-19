@@ -2,8 +2,8 @@ require './person'
 
 class Teacher < Person
   # contructor method
-  def initialize(specialization)
-    super(35, 'John Doe')
+  def initialize(age, specialization, name = 'Unknown', parent_permission = 'true')
+    super(age, name, parent_permission)
     @specialization = specialization
   end
 

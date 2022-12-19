@@ -2,8 +2,8 @@ require './person'
 
 class Student < Person
   # contructor method
-  def initialize(classroom)
-    super(27, 'Harry Winks')
+  def initialize(age, classroom, name = 'Unknown', parent_permission = 'true')
+    super(age, name, parent_permission)
     @classroom = classroom
   end
 
