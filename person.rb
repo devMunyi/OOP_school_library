@@ -1,4 +1,8 @@
-class Person
+require './nameable'
+require './capitalize_decorator'
+require './trimmer_decorator'
+
+class Person < Nameable
   # getter and setter for name variable
   attr_accessor :name
 
@@ -10,6 +14,7 @@ class Person
 
   # constructor method
   def initialize(age, name = 'Unknown', parent_permission = 'true')
+    super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -22,10 +27,15 @@ class Person
     @age >= 18
   end
 
-  # ublic method can_use_services?
+  # public method can_use_services?
   # that returns true if person is of age or if they have permission from parents.
   def can_use_services?
     of_age? || @parent_permission == 'true'
+  end
+
+  # public method correct name that returns name attribute
+  def correct_name
+    @name
   end
 
   # make of_age method private
