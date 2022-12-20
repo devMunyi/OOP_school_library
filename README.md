@@ -18,9 +18,7 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Leaderboard <a name="about-project"></a>
-
-**OOP Library** 
+# 📖 OOP Library <a name="about-project"></a>
 > This project is a practice exercise that entails building OOP library to manage recording and borrowing of books.
 
 ## 🛠 Built With <a name="built-with"></a>
