@@ -12,6 +12,9 @@ class Person < Nameable
   # getter for id variable
   attr_reader :id
 
+  # getter for rentals
+  attr_reader :rentals
+
   # constructor method
   def initialize(age, name = 'Unknown', parent_permission = 'true')
     super()
@@ -19,6 +22,7 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   # Private method of_age? that returns true if @age is greater
