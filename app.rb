@@ -22,7 +22,7 @@ class App
       puts 'No books available'
     else
       @books.each_with_index do |book, i|
-        puts "#{i} title: #{book.title} author: #{book.author}"
+        puts "#{i + 1} title: #{book.title} author: #{book.author}"
       end
     end
   end
@@ -33,7 +33,7 @@ class App
       puts 'There are no people'
     else
       @people.each_with_index do |person, i|
-        puts "#{i} name: #{person.name} age: #{person.age} person_id: #{person.id}"
+        puts "#{i + 1} name: #{person.name} age: #{person.age} person_id: #{person.id}"
       end
     end
   end
@@ -107,11 +107,11 @@ class App
     else
       puts 'Please select a book number from the following list:'
       list_of_books
-      book_number = gets.chomp.to_i
+      book_number = gets.chomp.to_i - 1
 
       puts 'Please select a person by number (and not person_id) from the following list:'
       list_of_people
-      person_number = gets.chomp.to_i
+      person_number = gets.chomp.to_i - 1
 
       puts 'Please Enter Today\'s Date, use format(YYYY-MM-DD eg.2022-12-13):'
       entered_date = gets.chomp.to_s

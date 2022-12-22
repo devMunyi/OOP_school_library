@@ -19,31 +19,35 @@ def display_list_of_options
     7 - Exit'
 end
 
+# rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/CyclomaticComplexity
 def handle_options
-  display_list_of_options
-
-  option = gets.chomp.to_i
-
-  case option
-  when 1
-    @app.list_of_books
-  when 2
-    @app.list_of_people
-  when 3
-    @app.create_person
-  when 4
-    @app.create_book
-  when 5
-    @app.create_rental
-  when 6
-    @app.rentals_by_person_id
-  when 7
-    puts 'Thank you for using this application'
-  else
-    puts 'Invalid Choice! Try again'
+  loop do
+    display_list_of_options
+    option = gets.chomp.to_i
+    case option
+    when 1
+      @app.list_of_books
+    when 2
+      @app.list_of_people
+    when 3
+      @app.create_person
+    when 4
+      @app.create_book
+    when 5
+      @app.create_rental
+    when 6
+      @app.rentals_by_person_id
+    when 7
+      puts 'Thank you for using this application'
+      break
+    else
+      puts 'Invalid Choice! Try again'
+      break
+    end
   end
 end
+# rubocop:enable Metrics/MethodLength
 # rubocop:enable Metrics/CyclomaticComplexity
 
 # call the main method to start the application
