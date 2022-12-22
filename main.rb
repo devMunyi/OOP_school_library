@@ -19,6 +19,7 @@ def display_list_of_options
     7 - Exit'
 end
 
+# rubocop:disable Metrics/CyclomaticComplexity
 def handle_options
   display_list_of_options
 
@@ -43,6 +44,7 @@ def handle_options
     puts 'Invalid Choice! Try again'
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
 
 # call the main method to start the application
 main
