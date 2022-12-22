@@ -7,18 +7,16 @@ def main
 end
 
 def display_list_of_options
-  puts 'Please Enter your name to proceed:'
-  name = gets.chomp.to_s
-  puts "Hi #{name.capitalize}, Welcome to School library App!"
+  puts 'Welcome to School library App!'
   puts '
     Choose an option below by entering a number:
-    1) List all books
-    2) List all people
-    3) Create a person
-    4) Create a book
-    5) Create a rental
-    6) List all rentals for a given person id
-    7) Exit'
+    1 - List all books
+    2 - List all people
+    3 - Create a person
+    4 - Create a book
+    5 - Create a rental
+    6 - List all rentals for a given person id
+    7 - Exit'
 end
 
 def handle_options
@@ -40,7 +38,7 @@ def handle_options
   when 6
     @app.rentals_by_person_id
   when 7
-    puts "Thank you #{name} for using this application"
+    puts 'Thank you for using this application'
   else
     puts 'Invalid Choice! Try again'
   end
