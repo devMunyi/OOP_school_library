@@ -4,16 +4,10 @@ require './trimmer_decorator'
 
 class Person < Nameable
   # getter and setter for name variable
-  attr_accessor :name
-
-  ## getter and setter for age variable
-  attr_accessor :age
+  attr_accessor :name, :age
 
   # getter for id variable
-  attr_reader :id
-
-  # getter for rentals
-  attr_reader :rentals
+  attr_reader :id, :rentals
 
   # constructor method
   def initialize(age, name = 'Unknown', parent_permission = 'true')
