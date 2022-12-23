@@ -1,10 +1,13 @@
+require 'pry'
 require './app'
 
-@app = App.new
+# @app = App.new
 
 def main
   handle_options
 end
+
+binding.pry
 
 def display_list_of_options
   puts 'Welcome to School library App!'
@@ -37,7 +40,7 @@ def handle_options
     when 5
       @app.create_rental
     when 6
-      @app.rentals_by_person_id
+      @ap.rentals_by_person_id
     when 7
       puts 'Thank you for using this application'
       break
