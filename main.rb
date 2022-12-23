@@ -1,4 +1,3 @@
-require 'pry'
 require './app'
 
 # @app = App.new
@@ -6,8 +5,6 @@ require './app'
 def main
   handle_options
 end
-
-binding.pry
 
 def display_list_of_options
   puts 'Welcome to School library App!'
