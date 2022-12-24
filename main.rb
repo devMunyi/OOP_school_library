@@ -1,13 +1,20 @@
 require './app'
 
-# @app = App.new
+#@app = App.new
 
 def main
   handle_options
 end
 
+def add_boundary
+  char = '-'
+  puts char * 70
+end
+
 def display_list_of_options
+  add_boundary
   puts 'Welcome to School library App!'
+  add_boundary
   puts '
     Choose an option below by entering a number:
     1 - List all books
@@ -24,6 +31,7 @@ end
 def handle_options
   loop do
     display_list_of_options
+    print 'Option: '
     option = gets.chomp.to_i
     case option
     when 1
