@@ -96,7 +96,6 @@ class App
     puts 'Please Enter Book Author:'
     author = gets.chomp.to_s
 
-    binding.pry
     @books.push(Book.new(title, author))
     puts 'Book created successfully'
   end
