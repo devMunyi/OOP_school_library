@@ -1,6 +1,6 @@
 require './app'
 
-#@app = App.new
+# @app = App.new
 
 def main
   handle_options
