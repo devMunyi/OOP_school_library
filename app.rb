@@ -39,11 +39,8 @@ class App
   end
 
   def create_student(name, age)
-    print 'Please Enter Student\'s Classroom: '
-    classroom = gets.chomp.to_i
-
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp.to_s
+    classroom = get_user_input('Please Enter Student\'s Classroom: ')
+    parent_permission = get_user_input('Has parent permission? [Y/N]: ')
 
     case parent_permission
     when 'Y'
@@ -66,14 +63,10 @@ class App
 
   # create a person
   def create_person
-    puts 'Do you want to create: \n 1) a student or \n 2) a Teacher. \n Please choose 1 or 2.'
-    choice = gets.chomp.to_i
-
-    print 'Please Enter Name: '
-    name = gets.chomp.to_s
-
-    print 'Please Enter Age: '
-    age = gets.chomp.to_i
+    puts 'Do you want to create a student or a Teacher?'
+    choice = get_user_input_as_int('Please Enter 1 for a student or 2 for a Teacher: ')
+    name = get_user_input('Please Enter Name: ')
+    age = get_user_input_as_int('Please Enter Age: ')
 
     case choice
     # when person being created student
@@ -82,9 +75,7 @@ class App
 
     # when person being created is a teacher
     when 2
-      print 'Teacher\'s specialization: '
-      specialization = gets.chomp.to_s
-
+      specialization = get_user_input('Teacher\'s specialization: ')
       # create a teacher
       create_teacher(age, specialization, name, 'true')
     else
@@ -94,11 +85,8 @@ class App
 
   # create a book
   def create_book
-    print 'Please Enter Book Title: '
-    title = gets.chomp.to_s
-
-    print 'Please Enter Book Author: '
-    author = gets.chomp.to_s
+    title = get_user_input('Please Enter Book Title: ')
+    author = get_user_input('Please Enter Book Author: ')
 
     @books.push(Book.new(title, author))
     puts 'Book created successfully'
@@ -111,16 +99,12 @@ class App
     else
       puts 'Please select a book number from the following list:'
       list_of_books
-      print 'Book number: '
-      book_number = gets.chomp.to_i - 1
+      book_number = get_user_input_as_int('Book number: ') - 1
 
       puts 'Please select a person by number (and not person_id) from the following list:'
       list_of_people
-      print 'Person Number: '
-      person_number = gets.chomp.to_i - 1
-
-      print 'Please Enter Today\'s Date, use format(YYYY-MM-DD eg.2022-12-13): '
-      entered_date = gets.chomp.to_s
+      person_number = get_user_input_as_int('Person Number: ') - 1
+      entered_date = get_user_input('Please Enter Today\'s Date, use format(YYYY-MM-DD eg.2022-12-13): ')
 
       # now you have all neccessary variables create and add a rental
       @rentals << Rental.new(entered_date, @books[book_number], @people[person_number])
@@ -133,8 +117,7 @@ class App
     if !@people.empty? && !@rentals.empty?
       puts 'Please select person id from the following list of people:'
       list_of_people
-      print 'Person id: '
-      id = gets.chomp.to_i
+      id = get_user_input_as_int('Person id: ')
 
       @rentals.each do |rental|
         if rental.person.id == id
@@ -146,5 +129,16 @@ class App
     else
       puts 'There are no rentals'
     end
+  end
+  private
+  def get_user_input(message)
+    print message
+    gets.chomp
+  end
+
+  private
+  def get_user_input_as_int(message)
+    print message
+    gets.chomp.to_i
   end
 end
