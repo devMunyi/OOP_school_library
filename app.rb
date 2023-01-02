@@ -11,7 +11,7 @@ class App
 
   # contructor method
   def initialize
-    # @books = []
+    @books = []
     @people = []
     @rentals = []
   end
@@ -38,25 +38,30 @@ class App
     end
   end
 
-  def create_student_helper(name, age)
-    puts 'Please Enter Student\'s Classroom:'
+  def create_student(name, age)
+    print 'Please Enter Student\'s Classroom: '
     classroom = gets.chomp.to_i
 
-    puts 'Has parent permission? Yes or No:'
+    print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp.to_s
 
     case parent_permission
-    when 'Yes'
+    when 'Y'
       # now create the student
       @people << Student.new(age, classroom, name, 'true')
       puts 'Student created successfully!'
-    when 'No'
+    when 'N'
       # now create the student
       @people << Student.new(age, classroom, name, 'false')
       puts 'Student created successfully!'
     else
-      puts 'Invalid Input! Should be Yes or No'
+      puts 'Invalid Input! Should be Y for yes or N for No'
     end
+  end
+
+  def create_teacher(age, specialization, name, permission)
+    @people << Teacher.new(age, specialization, name, permission)
+    puts 'Teacher created successfully'
   end
 
   # create a person
@@ -64,25 +69,24 @@ class App
     puts 'Do you want to create: \n 1) a student or \n 2) a Teacher. \n Please choose 1 or 2.'
     choice = gets.chomp.to_i
 
-    puts 'Please Enter Name:'
+    print 'Please Enter Name: '
     name = gets.chomp.to_s
 
-    puts 'Please Enter Age:'
+    print 'Please Enter Age: '
     age = gets.chomp.to_i
 
     case choice
     # when person being created student
     when 1
-      create_student_helper(name, age)
+      create_student(name, age)
 
     # when person being created is a teacher
     when 2
-      puts 'Teacher\'s specialization:'
+      print 'Teacher\'s specialization: '
       specialization = gets.chomp.to_s
 
       # create a teacher
-      @people << Teacher.new(age, specialization, name, 'true')
-      puts 'Teacher created successfully'
+      create_teacher(age, specialization, name, 'true')
     else
       puts 'Invalid Input! Should be 1 or 2'
     end
@@ -90,10 +94,10 @@ class App
 
   # create a book
   def create_book
-    puts 'Please Enter Book Title:'
+    print 'Please Enter Book Title: '
     title = gets.chomp.to_s
 
-    puts 'Please Enter Book Author:'
+    print 'Please Enter Book Author: '
     author = gets.chomp.to_s
 
     @books.push(Book.new(title, author))
@@ -107,13 +111,15 @@ class App
     else
       puts 'Please select a book number from the following list:'
       list_of_books
+      print 'Book number: '
       book_number = gets.chomp.to_i - 1
 
       puts 'Please select a person by number (and not person_id) from the following list:'
       list_of_people
+      print 'Person Number: '
       person_number = gets.chomp.to_i - 1
 
-      puts 'Please Enter Today\'s Date, use format(YYYY-MM-DD eg.2022-12-13):'
+      print 'Please Enter Today\'s Date, use format(YYYY-MM-DD eg.2022-12-13): '
       entered_date = gets.chomp.to_s
 
       # now you have all neccessary variables create and add a rental
@@ -127,7 +133,7 @@ class App
     if !@people.empty? && !@rentals.empty?
       puts 'Please select person id from the following list of people:'
       list_of_people
-
+      print 'Person id: '
       id = gets.chomp.to_i
 
       @rentals.each do |rental|
