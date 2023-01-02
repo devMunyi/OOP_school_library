@@ -130,13 +130,14 @@ class App
       puts 'There are no rentals'
     end
   end
+
   private
+
   def get_user_input(message)
     print message
     gets.chomp
   end
 
-  private
   def get_user_input_as_int(message)
     print message
     gets.chomp.to_i
