@@ -37,6 +37,7 @@
 - Add new students or teachers.
 - Add new books.
 - Save records of who borrowed a given book and when.
+- Persist the data in a json file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -94,6 +95,12 @@ rubocop
 
 - GitHub: [@devMunyi](https://github.com/devMunyi)
 - LinkedIn: [Samuel Munyi](https://www.linkedin.com/in/samuel-munyi-01315b174/)
+
+👤 **Ndikumana Isaie**
+
+- GitHub: [ndikumanaisaie](https://github.com/ndikumanaisaie)
+- Twitter: [Ndikuma38670724](https://twitter.com/Ndikuma38670724)
+- LinkedIn: [Ndikumana Isaie](https://www.linkedin.com/in/ndikumanaisaie/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
