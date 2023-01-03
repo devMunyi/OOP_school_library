@@ -38,7 +38,6 @@ class Person < Nameable
     Rental.new(date, book, self)
   end
 
-
   # make of_age method private
   private :of_age?
 end
