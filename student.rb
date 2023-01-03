@@ -20,4 +20,15 @@ class Student < Person
     # sure that when setting the classroom for a student it also adds it to the classrooms' students
     classroom.students.push(self) unless classroom.students.include?(self)
   end
+
+  def as_json()
+    {
+      type: Student,
+      name: @name,
+      id: @id,
+      age: @age,
+      classroom: @classroom,
+      parent_permission: @parent_permission
+    }
+  end
 end

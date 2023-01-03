@@ -1,6 +1,8 @@
 require 'json'
 require './app'
 require './book'
+require './teacher'
+require './student'
 
 class Storage 
   def initialize(app)
@@ -8,25 +10,27 @@ class Storage
   end
 
   def save_people
-    return if @app.people.size < 1 
+    return if @app.people.empty?
 
-    @app.people.map { |person| p person.to_json}
-
-    # people_json = @app.people.map(&:as_json)
-    File.write('people.json', JSON.generate(@app.people))
+    people_json = @app.people.map(&:as_json)
+    File.write('people.json', JSON.dump(people_json))
   end
 
   def get_people
     # handle case when people.json is not available (people.json)
     return unless File.exist?('people.json')
 
-    people = JSON.parse(File.read('people.json'))
-
-    people.each do |person|
-      @app.people.push(person)
+    people_json = JSON.parse(File.read('people.json'))
+    people_json.each do |person|
+      if person['type'] == 'Student'
+        new_student = Student.new(person['age'], person['classroom'], person['name'], person['parent_permission'])
+        @app.people.push(new_student)
+      else
+        new_teacher = Teacher.new(person['age'], person['specialization'], person['name'])
+        @app.people.push(new_teacher)
+      end
     end
   end
-
 
   def read_data
     get_people
