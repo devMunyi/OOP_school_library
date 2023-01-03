@@ -1,8 +1,11 @@
 require './app'
+require './storage'
 
 class Menu
   def initialize
     @app = App.new
+    @storage = Storage.new(@app)
+    @storage.read_data
   end
 
   def welcome_message
@@ -12,6 +15,7 @@ class Menu
   end
 
   def exit_app
+    @storage.write_data
     puts 'Thank you for using school library'
   end
 
@@ -51,7 +55,6 @@ class Menu
     else
       puts 'Invalid Choice! Try again'
     end
-
     display_list_of_options
   end
 
