@@ -1,1 +1,0 @@
-file = File.open("users.txt", 'w')

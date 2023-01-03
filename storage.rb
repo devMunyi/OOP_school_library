@@ -3,8 +3,10 @@ require './app'
 require './book'
 require './teacher'
 require './student'
+require './rental'
+require './person'
 
-class Storage 
+class Storage
   def initialize(app)
     @app = app
   end
@@ -49,7 +51,7 @@ class Storage
 
     books = @app.books.map(&:as_json)
     File.write('books.json', JSON.dump(books))
-  end 
+  end
 
   def get_books
     return unless File.exist?('books.json')
@@ -61,9 +63,31 @@ class Storage
     end
   end
 
-  def get_rentals
+  def find_person(person_id)
+    @app.people.each { |people| return people if people.id == person_id }
   end
-  
+
+  def find_book(book_title)
+    @app.books.each { |book| return book if book.title == book_title }
+  end
+
+  def get_rentals
+    return unless File.exist?('rentals.json')
+
+    JSON.parse(File.read('rentals.json')).map do |rental|
+      date = rental['date']
+      person = find_person(rental['person_id'])
+      book = find_book(rental['book_title'])
+      new_rental = Rental.new(date, book, person[0])
+      @app.rentals.push(new_rental)
+    end
+  end
+
   def save_rentals
+    rentals_json = []
+    @app.rentals.each do |rental|
+      rentals_json.push({ date: rental.date, person_id: rental.person.id, book_title: rental.book.title })
+    end
+    open('rentals.json', 'w') { |f| f << JSON.generate(rentals_json) }
   end
 end

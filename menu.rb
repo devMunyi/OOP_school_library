@@ -15,8 +15,8 @@ class Menu
   end
 
   def exit_app
-    @storage.write_data
     puts 'Thank you for using school library'
+    @storage.write_data
   end
 
   def display_list_of_options
