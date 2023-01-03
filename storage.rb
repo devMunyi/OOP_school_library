@@ -18,7 +18,7 @@ class Storage
     File.write('people.json', JSON.dump(people_json))
   end
 
-  def get_people
+  def load_people
     # handle case when people.json is not available (people.json)
     return unless File.exist?('people.json')
 
@@ -35,9 +35,9 @@ class Storage
   end
 
   def read_data
-    get_people
-    get_books
-    get_rentals
+    load_people
+    load_books
+    load_rentals
   end
 
   def write_data
@@ -53,7 +53,7 @@ class Storage
     File.write('books.json', JSON.dump(books))
   end
 
-  def get_books
+  def load_books
     return unless File.exist?('books.json')
 
     books = JSON.parse(File.read('books.json'))
@@ -71,7 +71,7 @@ class Storage
     @app.books.each { |book| return book if book.title == book_title }
   end
 
-  def get_rentals
+  def load_rentals
     return unless File.exist?('rentals.json')
 
     JSON.parse(File.read('rentals.json')).map do |rental|
