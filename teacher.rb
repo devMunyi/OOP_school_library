@@ -1,6 +1,8 @@
 require './person'
 
 class Teacher < Person
+  attr_reader :specialization
+
   # contructor method
   def initialize(age, specialization, name = 'Unknown', parent_permission = 'true')
     super(age, name, parent_permission)
