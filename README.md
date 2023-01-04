@@ -19,6 +19,7 @@
 - [📝 License](#license)
 
 # 📖 OOP Library <a name="about-project"></a>
+
 > This project is a practice exercise that entails building OOP library to manage recording and borrowing of books.
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -33,7 +34,9 @@
 </details>
 
 ### Key Features <a name="key-features"></a>
+
 **You can do the following with app:**
+
 - Add new students or teachers.
 - Add new books.
 - Save records of who borrowed a given book and when.
@@ -62,7 +65,7 @@ git clone https://github.com/devMunyi/OOP_school_library.git
 
 - Navigate to the location of the folder in your machine:
 
-**``you@your-Pc-name:~$ cd OOP_school_library``**
+**`you@your-Pc-name:~$ cd OOP_school_library`**
 
 ### Install
 
@@ -102,6 +105,12 @@ rubocop
 - Twitter: [Ndikuma38670724](https://twitter.com/Ndikuma38670724)
 - LinkedIn: [Ndikumana Isaie](https://www.linkedin.com/in/ndikumanaisaie/)
 
+👤 **Derrick Mulinde**
+
+- GitHub: [inspecta](https://github.com/inspecta)
+- Twitter: [djmulinde](https://twitter.com/djmulinde)
+- LinkedIn: [Derrick Mulinde](https://www.linkedin.com/in/derrick-mulinde/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -120,7 +129,6 @@ Feel free to check the [issues page](../../issues/).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ⭐️ Show your support <a name="support"></a>
-
 
 Give a ⭐️ if you like this project and how I managed to build it!
 

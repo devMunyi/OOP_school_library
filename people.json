@@ -1,1 +1,1 @@
-[{"type":"Student","name":"Isaie","id":62,"age":32,"classroom":"sch","parent_permission":"true"},{"type":"Teacher","name":"derick","id":11,"age":24,"specialization":"math"},{"type":"Teacher","name":"Iribuka","id":263,"age":0,"specialization":"ICT"},{"type":"Teacher","name":"Charles","id":939,"age":32,"specialization":"history"}]
+[{"type":"Student","name":"Sam","id":123,"age":24,"classroom":"2A","parent_permission":"true"},{"type":"Teacher","name":"Derrick","id":146,"age":45,"specialization":"Sci"}]
