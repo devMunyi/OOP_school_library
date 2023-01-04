@@ -4,10 +4,10 @@ require './trimmer_decorator'
 
 class Person < Nameable
   # getter and setter for name variable
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals, :id
 
   # getter for id variable
-  attr_reader :id, :rentals
+  # attr_reader :id
 
   # constructor method
   def initialize(age, name = 'Unknown', parent_permission = 'true')
@@ -32,6 +32,10 @@ class Person < Nameable
   # public method correct name that returns name attribute
   def correct_name
     @name
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, book, self)
   end
 
   # make of_age method private

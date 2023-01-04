@@ -120,11 +120,9 @@ class App
       id = get_user_input_as_int('Person id: ')
 
       @rentals.each do |rental|
-        if rental.person.id == id
-          puts "Book Name: #{rental.book.title} Book Author: #{rental.book.author} Date: #{rental.date}"
-        else
-          puts "No book found by person id #{id}"
-        end
+        return puts "No book found by person id #{id}" unless rental.person.id == id
+
+        puts "Book Name: #{rental.book.title} Book Author: #{rental.book.author} Date: #{rental.date}"
       end
     else
       puts 'There are no rentals'
